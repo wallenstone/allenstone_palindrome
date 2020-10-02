@@ -1,6 +1,6 @@
 require "allenstone_palindrome/version"
 
-class String
+module AllenstonePalindrome
 
 	# Returns true for a palindrome, false otherwise.
 	def palindrome?
@@ -15,6 +15,14 @@ class String
 	private
 		# Returns content for palindrome testing.
 		def processed_content
-			scan(/[a-z]/i).join.downcase
+			to_s.scan(/[a-z\d]/i).join.downcase
 		end
+end
+
+class String
+	include AllenstonePalindrome
+end
+
+class Integer
+	include AllenstonePalindrome
 end
