@@ -25,4 +25,8 @@ class AllenstonePalindromeTest < Minitest::Test
   def test_integer_palindrome
   	assert 12321.palindrome?
   end
+
+  def test_blank_string
+    refute "  ".palindrome?
+  end
 end
